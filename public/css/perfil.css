@@ -1,0 +1,17 @@
+.perfil-images{
+	width: 50%;
+	float: left;
+}
+
+.perfil-list{
+	width: 50%;
+	float: left;
+}
+
+.list-funciones{
+	list-style: none;
+}
+
+.list-funciones li{
+	display: block;
+}
