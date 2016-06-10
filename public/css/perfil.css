@@ -1,17 +1,26 @@
-.perfil-images{
+.perfil-left{
 	width: 50%;
 	float: left;
 }
 
-.perfil-list{
+.perfil-right{
 	width: 50%;
-	float: left;
+	float: right;
 }
 
-.list-funciones{
+.perfil-right .options{
+	vertical-align: middle;
+}
+
+.perfil-right .options li{
 	list-style: none;
+	font-size: 18px;
 }
 
-.list-funciones li{
-	display: block;
+.perfil-right .options li a{
+	color: black;
+}
+
+.perfil-right .options li a:hover{
+	color: gray;
 }

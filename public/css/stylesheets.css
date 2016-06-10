@@ -1,0 +1,46 @@
+
+html,
+body {
+    font-family: 'Ubuntu';
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -0-font-smoothing: antialiased;
+}
+a {
+    text-decoration: none;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -ms-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+}
+a:focus {
+    text-decoration: none;
+    outline:none;
+    outline-offset:0;
+}
+a:hover {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2.25em;
+}
+
+h3 {
+    font-size: 1.75em;
+}

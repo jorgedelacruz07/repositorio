@@ -8,7 +8,7 @@ class Usuario extends Model
 {
     public $timestamps = false;
 
-    protected $table = "USUARIO";
+    protected $table = "usuario";
 
     protected $fillable = ["nombre_usuario","apellidos_usuario"];
 

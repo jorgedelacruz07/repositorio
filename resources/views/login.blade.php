@@ -16,11 +16,11 @@
             <form id="form-login" class="login" action="{{ url('perfil') }}" method="post" autocomplete="off">
                 {{ csrf_field() }}
                 <div class="form-login">
-                    USUARIO</br>
+                    <label for="id_usuario">USUARIO</label><br>
                     <input type="text" name="id_usuario" id="id_usuario" placeholder="Ingresar usuario" autofocus="" required="">
                 </div>
                 <div class="form-login">
-                    CONTRASEÑA</br>
+                    <label for="password">CONTRASEÑA</label><br>
                     <input type="password" name="password" id="password" placeholder="Ingresar password" required="">
                 </div>
                 <div class="form-login">

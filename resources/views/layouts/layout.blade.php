@@ -3,17 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>Repositorio Académico</title>
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<!-- <link href='fonts/Ubuntu/Ubuntu-Regular.ttf' rel='stylesheet' type='text/css'> -->
+	<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/stylesheets.css">
 	<link rel="stylesheet" type="text/css" href="css/general.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link rel="stylesheet" type="text/css" href="css/perfil.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
 </head>
 <body>
@@ -27,8 +24,6 @@
 			</div>
 		</div>
 	</div>
-
-
 
 	<div class="contenido">
 		<div class="contenido-in">
@@ -49,10 +44,9 @@
 			<div class="footer-services">
 				<p>SERVICIOS</p>
 				<ul class="list-services">
-					<a href="/repositorio_academico/public/perfil" class="footer-services-list"><li>Perfil</li></a>
-					<a href="/repositorio_academico/public/cursos" class="footer-services-list"><li>Cursos</li></a>
-					<a href="/repositorio_academico/public/recientes" class="footer-services-list"><li>Recientes</li></a>
-					<a href="/repositorio_academico/public/subir" class="footer-services-list"><li>Subir</li></a>
+					<a href="{{ url('cursos') }}" class="footer-services-list"><li>Cursos</li></a>
+					<a href="{{ url('recientes') }}" class="footer-services-list"><li>Recientes</li></a>
+					<a href="{{ url('subir') }}" class="footer-services-list"><li>Subir</li></a>
 				</ul>
 			</div>
 		</div>        

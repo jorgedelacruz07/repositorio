@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class UserController extends Controller
+class ControladorUsuarios extends Controller
 {
-	public function index(){
+    public function index(){
 
 	}
 
-    public function identificar(Request $request){
+    public function login(Request $request){
         $id_usuario = $request->id_usuario;
         $usuario = Usuario::where('id_usuario','=',$id_usuario)->first();
         return view("perfil", ["usuario"=>$usuario]);
