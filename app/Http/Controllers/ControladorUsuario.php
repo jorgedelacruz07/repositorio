@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class ControladorUsuarios extends Controller
+class ControladorUsuario extends Controller
 {
     public function index(){
-
+    	return view("login");
 	}
 
     public function login(Request $request){

@@ -17,11 +17,11 @@
                 {{ csrf_field() }}
                 <div class="form-login">
                     <label for="id_usuario">USUARIO</label><br>
-                    <input type="text" name="id_usuario" id="id_usuario" placeholder="Ingresar usuario" autofocus="" required="">
+                    <input type="text" id="id_usuario" name="id_usuario" placeholder="Ingresar usuario" autofocus="" required="">
                 </div>
                 <div class="form-login">
                     <label for="password">CONTRASEÑA</label><br>
-                    <input type="password" name="password" id="password" placeholder="Ingresar password" required="">
+                    <input type="password" id="password" name="password" placeholder="Ingresar password" required="">
                 </div>
                 <div class="form-login">
                     <input type="submit" id="submit" name="submit" value="Enviar" class="boton">

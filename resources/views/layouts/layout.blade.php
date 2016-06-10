@@ -11,6 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="css/general.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link rel="stylesheet" type="text/css" href="css/perfil.css">
+	<link rel="stylesheet" type="text/css" href="css/recientes.css">
+	<link rel="stylesheet" type="text/css" href="css/perfil.css">
+	<link rel="stylesheet" type="text/css" href="css/cursos.css">
+
 
 </head>
 <body>
@@ -42,11 +46,11 @@
 			</div>
 
 			<div class="footer-services">
-				<p>SERVICIOS</p>
+				<h3>SERVICIOS</h3>
 				<ul class="list-services">
-					<a href="{{ url('cursos') }}" class="footer-services-list"><li>Cursos</li></a>
-					<a href="{{ url('recientes') }}" class="footer-services-list"><li>Recientes</li></a>
-					<a href="{{ url('subir') }}" class="footer-services-list"><li>Subir</li></a>
+					<li><a href="{{ url('cursos') }}" class="footer-services-list">Cursos</a></li>
+					<li><a href="{{ url('recientes') }}" class="footer-services-list">Recientes</a></li>
+					<li><a href="{{ url('subir') }}" class="footer-services-list">Subir</a></li>
 				</ul>
 			</div>
 		</div>        

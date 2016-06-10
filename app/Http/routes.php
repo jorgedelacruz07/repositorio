@@ -1,27 +1,29 @@
 <?php
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('/', 'ControladorUsuario@index');
+// Route::get('login', 'ControladorUsuario@index');
 
-Route::get('/registro', function () {
-    return view('registro');
-});
 
-Route::post('/perfil', 'ControladorUsuarios@login');
+
+Route::get('login', 'Auth\AuthController@getLogin');
+Route::post('login', ['as' =>'login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
+
+Route::get('registro', 'Auth\AuthController@getRegister');
+Route::post('registro', ['as' => 'auth/register', 'uses' => 'Auth\AuthController@postRegister']);
+
+
+Route::post('/perfil', 'ControladorUsuario@login');
 
 Route::get('/cursos', function () {
     return view('cursos');
 });
 
-Route::get('/subir', function () {
-    return view('subir');
-});
 
-Route::get('/recientes', function () {
-    return view('recientes');
-});
+Route::get('recientes', 'ControladorDocumento@ver');
 
-Route::post('agregarBibliografia', 'ControladorBibliografia@agregar');
+
+Route::get('subir', 'ControladorDocumento@subir');
+Route::post('subir', 'ControladorDocumento@agregar');
 
 ?>
