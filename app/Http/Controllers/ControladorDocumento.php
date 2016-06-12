@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Usuario;
 use App\Documento;
 use App\TipoDocumento;
-use App\Bibliografia;
-use App\Evaluaciones;
-use App\Clases;
+use App\CursoPorProfesor;
 use App\ExtensionDocumento;
 use Storage;
 
@@ -19,7 +17,25 @@ use App\Http\Requests;
 class ControladorDocumento extends Controller
 {
 	public function ver(){
-		return view("recientes");
+		$documentos = Documento::all();
+
+		// $id_usuarios = $documentos->id_usuario;
+		// $usuarios = Usuario::where("id_usuario","=",$id_usuarios);
+
+		$usuarios = Usuario::all();
+
+		$cursoXprofesores = CursoPorProfesor::all();
+		$extension_documentos = ExtensionDocumento::all();
+		$tipo_documentos = TipoDocumento::all();
+		$direccion_archivo = "../storage/archivos/";
+
+		return view("recientes")
+		->with("documentos",$documentos)
+		->with("usuarios",$usuarios)
+		->with("tipo_documentos",$tipo_documentos)
+		->with("cursoXprofesores",$cursoXprofesores)
+		->with("extension_documentos",$extension_documentos)
+		->with("direccion_archivo",$direccion_archivo);
 	}
 
 	public function subir(){

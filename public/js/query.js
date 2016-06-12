@@ -1,45 +1,27 @@
-$( ".pdf" ).click(function() {
+$( ".1" ).click(function() {
 	$(this).css("background-color","gray");
-	$(".papers").css("background-color","black");
-	$(".images").css("background-color","black");
-	$(".links").css("background-color","black");
-	$(".slider-pdf").css("display","block");
-	$(".slider-papers").css("display","none");
-	$(".slider-images").css("display","none");
-	$(".slider-links").css("display","none");
+	$(".2").css("background-color","black");
+	$(".3").css("background-color","black");
+	$(".slide-Evaluacion").css("display","block");
+	$(".slide-Bibliografia").css("display","none");
+	$(".slide-Clases").css("display","none");
 });
 
-$( ".papers" ).click(function() {
-	$(".pdf").css("background-color","black");
+$( ".2" ).click(function() {
+	$(".1").css("background-color","black");
 	$(this).css("background-color","gray");
-	$(".images").css("background-color","black");
-	$(".links").css("background-color","black");
-	$(".slider-pdf").css("display","none");
-	$(".slider-papers").css("display","block");
-	$(".slider-images").css("display","none");
-	$(".slider-links").css("display","none");
+	$(".3").css("background-color","black");
+	$(".slide-Evaluacion").css("display","none");
+	$(".slide-Bibliografia").css("display","block");
+	$(".slide-Clases").css("display","none");
 });
 
-$( ".images" ).click(function() {
-	$(".pdf").css("background-color","black");
-	$(".papers").css("background-color","black");
+$( ".3" ).click(function() {
+	$(".1").css("background-color","black");
+	$(".2").css("background-color","black");
 	$(this).css("background-color","gray");
-	$(".links").css("background-color","black");
-	$(".slider-pdf").css("display","none");
-	$(".slider-papers").css("display","none");
-	$(".slider-images").css("display","block");
-	$(".slider-links").css("display","none");
+	$(".slide-Evaluacion").css("display","none");
+	$(".slide-Bibliografia").css("display","none");
+	$(".slide-Clases").css("display","block");
 });
-
-$( ".links" ).click(function() {
-	$(".pdf").css("background-color","black");
-	$(".papers").css("background-color","black");
-	$(".images").css("background-color","black");
-	$(this).css("background-color","gray");
-	$(".slider-pdf").css("display","none");
-	$(".slider-papers").css("display","none");
-	$(".slider-images").css("display","none");
-	$(".slider-links").css("display","block");
-});
-
 
