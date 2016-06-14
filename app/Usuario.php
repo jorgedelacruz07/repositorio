@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model
 {
+	public function documento(){
+		return $this->hasMany("App\Documento", "id_usuario", "id_usuario");
+	}
+
     public $timestamps = false;
 
     protected $table = "usuario";

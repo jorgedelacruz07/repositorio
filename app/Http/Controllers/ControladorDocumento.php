@@ -21,17 +21,16 @@ class ControladorDocumento extends Controller
 
 		// $id_usuarios = $documentos->id_usuario;
 		// $usuarios = Usuario::where("id_usuario","=",$id_usuarios);
+		
+		// $usuarios = Usuario::all();
 
-		$usuarios = Usuario::all();
-
+		$tipo_documentos = TipoDocumento::all();
 		$cursoXprofesores = CursoPorProfesor::all();
 		$extension_documentos = ExtensionDocumento::all();
-		$tipo_documentos = TipoDocumento::all();
 		$direccion_archivo = "../storage/archivos/";
 
 		return view("recientes")
 		->with("documentos",$documentos)
-		->with("usuarios",$usuarios)
 		->with("tipo_documentos",$tipo_documentos)
 		->with("cursoXprofesores",$cursoXprofesores)
 		->with("extension_documentos",$extension_documentos)
@@ -88,5 +87,13 @@ class ControladorDocumento extends Controller
 				return view("mensajeRechazo")->with("msj","Hubo un error al agregar documento");
 			}
 		}
+	}
+
+	// public function descargar($id){
+	public function descargar(){
+		// $documento = Documento::find($id);
+		// $url = $documento->direccion_archivo;
+		// return response()->download($url);
+		return response()->download("D:/repositorio/evaluaciones/examenparcial.pdf");
 	}
 }

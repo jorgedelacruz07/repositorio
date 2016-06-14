@@ -30,9 +30,7 @@
 	</div>
 
 	<div class="contenido">
-		<div class="contenido-in">
-		 	@yield('content')
-		</div>
+		 @yield('content')
 	</div>
 	
 	<div class="footer">
