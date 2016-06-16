@@ -1,3 +1,10 @@
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 html,
 body {
@@ -5,12 +12,14 @@ body {
     height: 100%;
     margin: 0;
     font-size: 16px;
+    background: #fff;
 
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     -ms-font-smoothing: antialiased;
     -0-font-smoothing: antialiased;
 }
+
 a {
     text-decoration: none;
     -webkit-transition: all .25s ease;
@@ -19,11 +28,13 @@ a {
     -o-transition: all .25s ease;
     transition: all .25s ease;
 }
+
 a:focus {
     text-decoration: none;
     outline:none;
     outline-offset:0;
 }
+
 a:hover {
     text-decoration: none;
 }
@@ -43,8 +54,4 @@ h2 {
 
 h3 {
     font-size: 1.75em;
-}
-
-input, option{
-    /*font-family: 'Ubuntu';*/
 }

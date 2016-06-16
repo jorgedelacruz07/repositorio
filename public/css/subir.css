@@ -2,21 +2,53 @@
 	text-align: center;
 }
 
-.form-left{
-	width: 50%;
-	float: left;
+.form-group{
+	margin: 2em auto;
+	overflow: hidden;
 }
 
-.form-left label{
-	margin: 2em auto;
-	display: block;
+.form-left{
+	width: 48%;
+	float: left;
+	text-align: right;
+	margin-right: 1em;
 }
 
 .form-right{
-	width: 50%;
+	width: 48%;
 	float: right;
 }
 
-.form-right .option{
-	margin: 2em auto;
+.form-right label{
+	margin-right: 1em;
 }
+
+.form-right .file{
+	
+}
+
+.form-right .file:hover{
+
+}
+
+.form-group .submit{
+    background: #303F9F;
+    /*border-radius: 10px;*/
+    border: 2px solid #f2f2f2;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    padding: 15px;
+    width: 10%;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.form-group .submit:hover{
+	background: #1976D2;
+}
+
+
