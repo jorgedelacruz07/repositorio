@@ -1,7 +1,22 @@
-.form-group{
-	
+.content-upload .title{
+	text-align: center;
 }
 
-.form-group .boton{
-	
+.form-left{
+	width: 50%;
+	float: left;
+}
+
+.form-left label{
+	margin: 2em auto;
+	display: block;
+}
+
+.form-right{
+	width: 50%;
+	float: right;
+}
+
+.form-right .option{
+	margin: 2em auto;
 }

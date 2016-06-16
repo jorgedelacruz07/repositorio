@@ -37,7 +37,7 @@
 							Publicado por:
 							<?= $documento->usuario->nombre_usuario ?>
 						</div>
-						<a href="<?= $documento->direccion_archivo ?>">
+						<a href="<?= $ruta.$documento->direccion_archivo ?>" target="_blank">
 							<button>Ver</button>
 						</a>
 						<a href="descargar_archivo/<?= $documento->id_documento ?>">
@@ -75,10 +75,10 @@
 							Publicado por:
 							<?= $documento->usuario->nombre_usuario ?>
 						</div>
-						<a href="<?= $documento->direccion_archivo ?>">
+						<a href="<?= $ruta.$documento->direccion_archivo ?>" target="_blank">
 							<button>Ver</button>
 						</a>
-						<a href="descargar_archivo">
+						<a href="descargar_archivo/<?= $documento->id_documento ?>">
 							<button>Descargar</button>
 						</a>
 					</div>
@@ -88,6 +88,6 @@
 		<?php endforeach ?>
 	</div>
 	<div class="footer-content">
-		<h3>¿Qué puede haber aquí?</h3>
+
 	</div>
 @stop

@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/recientes.css">
 	<link rel="stylesheet" type="text/css" href="css/perfil.css">
 	<link rel="stylesheet" type="text/css" href="css/cursos.css">
+	<link rel="stylesheet" type="text/css" href="css/subir.css">
 
 
 </head>

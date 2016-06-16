@@ -19,14 +19,11 @@ Route::get('/cursos', function () {
     return view('cursos');
 });
 
-
 Route::get('recientes', 'ControladorDocumento@ver');
-
 
 Route::get('subir', 'ControladorDocumento@subir');
 Route::post('subir', 'ControladorDocumento@agregar');
 
-// Route::get('descargar_archivo/{id}','ControladorDocumento@descargar');
-Route::get('descargar_archivo','ControladorDocumento@descargar');
+Route::get('descargar_archivo/{id}','ControladorDocumento@descargar');
 
 ?>
