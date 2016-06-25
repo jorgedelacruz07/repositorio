@@ -1,69 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Repositorio Académico</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<title>FisiZilla</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<!-- <link href='fonts/Ubuntu/Ubuntu-Regular.ttf' rel='stylesheet' type='text/css'> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/stylesheets.css">
-	<link rel="stylesheet" type="text/css" href="css/general.css">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
-	<link rel="stylesheet" type="text/css" href="css/perfil.css">
-	<link rel="stylesheet" type="text/css" href="css/recientes.css">
-	<link rel="stylesheet" type="text/css" href="css/perfil.css">
-	<link rel="stylesheet" type="text/css" href="css/cursos.css">
-	<link rel="stylesheet" type="text/css" href="css/subir.css">
-
-
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
+	<header>
+		<div class="container">
+			<header>
+				<nav class="navbar navbar-default navbar-fixed-top">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<div class="navbar-header">
+								<a class="navbar-brand" href="#">FISIZILLA</a>
+							</div>
+						</div>
 
-	@yield('particulas')
+						<div class="collapse navbar-collapse" id="navbar1">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="{{ url('perfil') }}">Perfil</a></li>
+								<li><a href="{{ url('cursos') }}">Cursos</a></li>
+								<li class="dropdown">
+									<a href=	"" class="dropdown-toggle" data-toggle="dropdown" role="button">
+										Documentos
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="{{ url('recientes') }}">Recientes</a></li>
+										<li class="divider"></li>
+										<li><a href="{{ url('recientes') }}">Evaluaciones</a></li>
+										<li><a href="{{ url('recientes') }}">Bibliografías</a></li>
+										<li><a href="{{ url('recientes') }}">Clases</a></li>
+									</ul>
+								</li>
+								<li><a href="{{ url('subir') }}">Subir</a></li>
+							</ul>
 
-	<div class="header">
-		<div class="header-center">
-			<div class="header-in">
-				<h1>Repositorio Académico</h1>
-			</div>
+							<form action="" class="navbar-form navbar-left" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Buscar">
+								</div>
+							</form>
+
+							<div class="nav navbar-nav navbar-right">
+								<li class="dropdown">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">
+										Configuración
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="{{ url('login') }}">Login</a></li>
+										<li><a href="{{ url('registro') }}">Registrarse</a></li>
+										<li><a href="#">Ajustes</a></li>
+										<li class="divider"></li>
+										<li><a href="{{ url('logout') }}">Cerrar sesión</a></li>
+									</ul>
+								</li>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
 		</div>
-	</div>
-
-	<div class="contenido">
-		 @yield('content')
-	</div>
+	</header>
 	
-	<div class="footer">
-		<div class="footer-in">
-			<div class="footer-logo">
-				<ul class="footer-address">
-					<li>Oficina Principal</li>
-					<li>Universidad Nacional Mayor de San Marcos</li>
-					<li>Cercado de Lima, Lima</li>
-				</ul>
-			</div>
-
-			<div class="footer-services">
-				<h3>SERVICIOS</h3>
-				<ul class="list-services">
-					<li><a href="{{ url('cursos') }}" class="footer-services-list">Cursos</a></li>
-					<li><a href="{{ url('recientes') }}" class="footer-services-list">Recientes</a></li>
-					<li><a href="{{ url('subir') }}" class="footer-services-list">Subir</a></li>
-				</ul>
-			</div>
-		</div>        
-    </div>
-
-	<script src="js/particles.js"></script>
-	<script src="js/particulas.js"></script>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-	<script type="text/javascript" src="js/query.js"></script>
-
+	<article class="contenido">
+		<br><br>
+		<br><br>
+		<br><br>
+		@yield('content')
+		<br><br>
+		<br><br>
+		<br><br>
+	</article>
 	
-	<!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<aside>
+	
+	</aside>
+	
+	<footer>
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Producido por FISIZILLA</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<div class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="{{ url('perfil') }}">Perfil</a></li>
+							<li><a href="{{ url('cursos') }}">Cursos</a></li>
+							<li><a href="{{ url('recientes') }}">Documentos</a></li> 
+							<li><a href="{{ url('subir') }}">Subir</a></li> 
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</footer>
 
+	<!-- Dropdown -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+	<!-- Básico -->
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

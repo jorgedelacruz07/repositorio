@@ -1,36 +1,37 @@
 @extends ('layouts.layout')
 
-@section('particulas')
-    <div id="particles-js"> </div>
-@stop
-
 @section ('content')
 
+	<div class="container col-md-6 col-md-offset-3">
+		<form action="{{ url('perfil') }}" class="form-horizontal" method="post" autocomplete="off">
+			{{ csrf_field() }}
+			<div class="form-group">
+				<label for="id_usuario" class="control-label col-md-3">ID</label>
+				<div class="col-md-9">
+					<input type="text" class="form-control" name="id_usuario" id="id_usuario" placeholder="ID de usuario">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password" class="control-label col-md-3">Password</label>
+				<div class="col-md-9">
+					<input type="password" class="form-control" name="password" id="password">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="checkbox col-md-9 col-md-offset-3">
+					<label>
+						<input type="checkbox">Recuérdame
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-3 col-md-offset-3">
+					<button class="btn btn-primary">Enviar</button>
+				</div>
+			</div>
 
-    <div class="envoltura">
-
-        <div class="cabecera" >
-            <img src="rsc/UNMSM.png">
-        </div>
-        <div class="cuerpo">
-            <form id="form-login" class="login" action="{{ url('perfil') }}" method="post" autocomplete="off">
-                {{ csrf_field() }}
-                <div class="form-login">
-                    <label for="id_usuario">USUARIO</label><br>
-                    <input type="text" id="id_usuario" name="id_usuario" placeholder="Ingresar usuario" autofocus="" required="">
-                </div>
-                <div class="form-login">
-                    <label for="password">CONTRASEÑA</label><br>
-                    <input type="password" id="password" name="password" placeholder="Ingresar password" required="">
-                </div>
-                <div class="form-login">
-                    <input type="submit" id="submit" name="submit" value="Enviar" class="boton">
-                </div>
-            </form>
-        </div>
-        <div class="pie">
-            <p>SISTEMA DE LOGIN Y REGISTRO</p>
-        </div>
-    </div>
+			<!-- Al agrupar en la etiqueta "fieldset disable", se deshabilitará la escritura para estos div -->
+		</form>
+	</div>
 
 @stop

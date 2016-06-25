@@ -15,7 +15,7 @@ Route::post('registro', ['as' => 'auth/register', 'uses' => 'Auth\AuthController
 
 Route::post('perfil', 'ControladorUsuario@login');
 
-Route::get('/cursos', function () {
+Route::get('cursos', function () {
     return view('cursos');
 });
 
