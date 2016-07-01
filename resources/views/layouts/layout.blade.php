@@ -17,7 +17,7 @@
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<div class="navbar-header">
-								<a class="navbar-brand" href="#">FISIZILLA</a>
+								<a class="navbar-brand" href="{{ url('perfil') }}">FISIZILLA</a>
 							</div>
 						</div>
 
@@ -26,7 +26,7 @@
 								<li class="active"><a href="{{ url('perfil') }}">Perfil</a></li>
 								<li><a href="{{ url('cursos') }}">Cursos</a></li>
 								<li class="dropdown">
-									<a href=	"" class="dropdown-toggle" data-toggle="dropdown" role="button">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">
 										Documentos
 										<span class="caret"></span>
 									</a>
@@ -59,6 +59,65 @@
 										<li><a href="#">Ajustes</a></li>
 										<li class="divider"></li>
 										<li><a href="{{ url('logout') }}">Cerrar sesión</a></li>
+									</ul>
+								</li>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<header>
+				<nav class="navbar navbar-default navbar-static-top">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+								<span class="sr-only">Menú</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="{{ url('perfil') }}">FISIZILLA</a>
+						</div>
+
+						<div class="collapse navbar-collapse" id="navbar1">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="{{ url('perfil') }}">Perfil</a></li>
+								<li><a href="{{ url('cursos') }}">Cursos</a></li>
+								<li class="dropdown">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">
+										Documentos
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="{{ url('recientes') }}">Recientes</a></li>
+										<li class="divider"></li>
+										<li><a href="{{ url('recientes') }}">Evaluaciones</a></li>
+										<li><a href="{{ url('recientes') }}">Bibliografías</a></li>
+										<li><a href="{{ url('recientes') }}">Clases</a></li>
+									</ul>
+								</li>
+								<li><a href="{{ url('subir') }}">Subir</a></li>
+							</ul>
+
+							<form action="" class="navbar-form navbar-left" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Buscar">
+								</div>
+							</form>
+
+							<div class="nav navbar-nav navbar-right">
+								<li><a href="">Item #1</a></li>
+								<li class="active"><a href="">Item #2</a></li>
+								<li class="dropdown">
+									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">
+										Dropdown
+										<span class="caret"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Item #1</a></li>
+										<li><a href="#">Item #2</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Item #4</a></li>
 									</ul>
 								</li>
 							</div>
@@ -110,5 +169,11 @@
 	<!-- Básico -->
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>

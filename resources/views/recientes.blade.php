@@ -1,45 +1,42 @@
 @extends ('layouts.layout')
 
 @section ('content')
+
 	<div class="container">
-		<div class="row">
-			<?php $cantidad = count($documentos); ?>
-			<?php foreach ( $documentos as $documento ): ?>
-			<div class="col-xs-12 col-sm-6">
-				<p>
-					<div class="col-md-12">
-						<div class="document-elements">
-							Fecha de subida:
-							<?= $documento->fecha_subida; ?>
-						</div>
-						<div class="document-elements">
-							Estado de Documento:
-							<?= $documento->estado_doc ?>
-						</div>
-						<div class="document-elements">
-							Dirección del archivo:
-							<?= $documento->direccion_archivo ?>
-						</div>
-						<div class="document-elements">
-							Publicado por:
-							<?= $documento->usuario->nombre_usuario ?>
-						</div>
-						<div class="document-elements">
-							<button class="btn btn-primary">Like</button>
-							<?= $documento->votos_favor ?>
-							<button class="btn btn-primary">Dislike</button>
-							<?= $documento->votos_contra ?>
-						</div>
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered table-hover table-condensed">
+				<tr class="success">
+					<th>Fecha de subida</th>
+					<th>Estado de Documento</th>
+					<th>Dirección del archivo</th>
+					<th>Publicado por</th>
+					<th>Reacción</th>
+					<th>Acción</th>
+				</tr>
+				<?php $cantidad = count($documentos); ?>
+				<?php foreach ( $documentos as $documento ): ?>
+				<tr>
+					<td><?= $documento->fecha_subida; ?></td>
+					<td><?= $documento->estado_doc; ?></td>
+					<td><?= $documento->direccion_archivo; ?></td>
+					<td><?= $documento->usuario->nombre_usuario; ?></td>
+					<td>
+						<button class="btn btn-primary">Like</button>
+						<?= $documento->votos_favor ?>
+						<button class="btn btn-primary">Dislike</button>
+						<?= $documento->votos_contra ?>
+					</td>
+					<td>
 						<a href="<?= $ruta.$documento->direccion_archivo ?>" target="_blank">
 							<button class="btn btn-primary">Ver</button>
 						</a>
 						<a href="descargar_archivo/<?= $documento->id_documento ?>">
 							<button class="btn btn-primary">Descargar</button>
 						</a>
-					</div>
-				</p>
-			</div>
-			<?php endforeach ?>
+					</td>
+				</tr>
+				<?php endforeach ?>
+			</table>
 		</div>
 	</div>
 

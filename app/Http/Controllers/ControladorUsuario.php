@@ -18,6 +18,14 @@ class ControladorUsuario extends Controller
 		$id_usuario = $request->id_usuario;
 		$password = $request->password;
 		$usuario = Usuario::where('id_usuario','=',$id_usuario)->first();
-		return view("perfil")->with("usuario",$usuario);
+		$ruta = "../storage/fotos/";
+		return view("perfil")
+		->with("usuario",$usuario)
+		->with("ruta",$ruta);
+	}
+
+	public function cursos(){
+		$usuarios = Usuario::all();
+		return view("cursos")->with("usuarios",$usuarios);
 	}
 }
