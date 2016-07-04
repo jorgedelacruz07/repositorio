@@ -68,6 +68,7 @@ class AuthController extends Controller
         if($usuario->save()){
             return "se ha registrado correctamente el usuario";
         }
+        return view("login");
     }
 
     protected function getLogout(){

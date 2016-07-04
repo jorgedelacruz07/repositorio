@@ -21,9 +21,9 @@
 					<td><?= $documento->direccion_archivo; ?></td>
 					<td><?= $documento->usuario->nombre_usuario; ?></td>
 					<td>
-						<button class="btn btn-primary">Like</button>
+						<button class="btn btn-primary" onclick="aumentarValor();">Like</button>
 						<?= $documento->votos_favor ?>
-						<button class="btn btn-primary">Dislike</button>
+						<button class="btn btn-primary" onclick="disminuirValor();">Dislike</button>
 						<?= $documento->votos_contra ?>
 					</td>
 					<td>

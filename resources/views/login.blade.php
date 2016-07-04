@@ -29,8 +29,6 @@
 					<button class="btn btn-primary">Enviar</button>
 				</div>
 			</div>
-
-			<!-- Al agrupar en la etiqueta "fieldset disable", se deshabilitará la escritura para estos div -->
 		</form>
 	</div>
 

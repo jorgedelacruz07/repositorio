@@ -28,4 +28,8 @@ class ControladorUsuario extends Controller
 		$usuarios = Usuario::all();
 		return view("cursos")->with("usuarios",$usuarios);
 	}
+
+	public function registrar(){
+		
+	}
 }

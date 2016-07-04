@@ -16,7 +16,13 @@
 				<nav class="navbar navbar-default navbar-fixed-top">
 					<div class="container-fluid">
 						<div class="navbar-header">
-							<a class="navbar-brand" href="{{ url('perfil') }}">FISIZILLA</a>
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+								<span class="sr-only">Menú</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="{{ url('login') }}">FISIZILLA</a>
 						</div>
 
 						<div class="collapse navbar-collapse" id="navbar1">
@@ -108,5 +114,6 @@
 	<!-- Básico -->
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/repositorio.js"></script>
 </body>
 </html>

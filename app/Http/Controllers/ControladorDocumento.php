@@ -66,11 +66,11 @@ class ControladorDocumento extends Controller
 		$documento = new Documento;
 		$documento->id_documento = $cantidad_documentos;
 		$documento->fecha_subida = date("d/m/y");
-		$documento->estado_doc = $request->input("estado_doc");
+		$documento->estado_doc = 0;
 		$documento->direccion_archivo = $nombre_archivo;
 		$documento->votos_favor = 0;
 		$documento->votos_contra = 0;
-		$documento->id_usuario = $request->input("");
+		$documento->id_usuario = '13200049';
 		$documento->id_cursoXprof = $request->input("");
 		$documento->id_tipo_doc = $request->input("id_tipo_doc");
 		$documento->id_extension_doc = $request->input("id_extension_doc");
