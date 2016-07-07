@@ -1,27 +1,23 @@
 <?php
 
 Route::get('/', 'ControladorUsuario@index');
-// Route::get('login', 'ControladorUsuario@index');
-
-
-
-Route::get('login', 'Auth\AuthController@getLogin');
-Route::post('login', ['as' =>'login', 'uses' => 'Auth\AuthController@postLogin']);
-Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
-
-Route::get('registro', 'Auth\AuthController@getRegister');
-Route::post('registro', ['as' => 'auth/register', 'uses' => 'Auth\AuthController@postRegister']);
-
+Route::get('login', 'ControladorUsuario@index');
 
 Route::post('perfil', 'ControladorUsuario@login');
 
 Route::get('cursos', 'ControladorUsuario@cursos');
 
-Route::get('recientes', 'ControladorDocumento@ver');
+Route::get('documentos', 'ControladorDocumento@ver');
+Route::get('documentos/{id}','ControladorDocumento@archivo');
+Route::get('documentos/tipo/{id}','ControladorDocumento@tipo');
 
 Route::get('subir', 'ControladorDocumento@subir');
 Route::post('subir', 'ControladorDocumento@agregar');
 
 Route::get('descargar_archivo/{id}','ControladorDocumento@descargar');
+
+Route::get('datawarehouse', function (){
+	return view("datawarehouse");
+});
 
 ?>

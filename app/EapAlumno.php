@@ -10,6 +10,10 @@ class EapAlumno extends Model
 		return $this->hasMany("App\Alumno", "id_eap", "id_eap");
 	}
 
+	public function plan_estudios(){
+		return $this->hasMany("App\PlanEstudios", "id_eap", "id_eap");
+	}
+
 	public $timestamps = false;
 	
     protected $table = "eap_alumno";

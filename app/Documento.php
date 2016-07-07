@@ -10,6 +10,22 @@ class Documento extends Model
 		return $this->belongsTo("App\Usuario", "id_usuario", "id_usuario");
 	}
 
+	public function tipo_documento(){
+		return $this->belongsTo("App\TipoDocumento", "id_tipo_doc", "id_tipo_doc");
+	}
+
+	public function clases(){
+		return $this->hasOne("App\Clases", "id_documento", "id_documento");
+	}
+
+	public function evaluacion(){
+		return $this->hasOne("App\Evaluacion", "id_documento", "id_documento");
+	}
+
+	public function bibliografia(){
+		return $this->hasOne("App\Bibliografia", "id_documento", "id_documento");
+	}
+
 	public $timestamps = false;
 	
     protected $table = "documento";

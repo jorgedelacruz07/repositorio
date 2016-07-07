@@ -20,22 +20,25 @@ class ControladorDocumento extends Controller
 {
 	public function ver(){
 		$documentos = Documento::all();
-
-		// $id_usuarios = $documentos->id_usuario;
-		// $usuarios = Usuario::where("id_usuario","=",$id_usuarios);
-		
-		// $usuarios = Usuario::all();
-
-		$tipo_documentos = TipoDocumento::all();
-		$cursoXprofesores = CursoPorProfesor::all();
-		$extension_documentos = ExtensionDocumento::all();
 		$ruta = "../storage/archivos/";
-
-		return view("recientes")
+		return view("documentos")
 		->with("documentos",$documentos)
-		->with("tipo_documentos",$tipo_documentos)
-		->with("cursoXprofesores",$cursoXprofesores)
-		->with("extension_documentos",$extension_documentos)
+		->with("ruta",$ruta);
+	}
+
+	public function archivo($id){
+		$documento = Documento::where('id_documento',$id)->first();
+		$ruta = "../../storage/archivos/";
+		return view("documento")
+		->with("documento",$documento)
+		->with("ruta",$ruta);
+	}
+
+	public function tipo($id){
+		$documentos = Documento::where('id_tipo_doc',$id)->get();
+		$ruta = "../../../storage/archivos/";
+		return view("documentos")
+		->with("documentos",$documentos)
 		->with("ruta",$ruta);
 	}
 
@@ -65,7 +68,7 @@ class ControladorDocumento extends Controller
 
 		$documento = new Documento;
 		$documento->id_documento = $cantidad_documentos;
-		$documento->fecha_subida = date("d/m/y");
+		$documento->fecha_subida = date("y/m/d/h/i/s");
 		$documento->estado_doc = 0;
 		$documento->direccion_archivo = $nombre_archivo;
 		$documento->votos_favor = 0;
@@ -78,6 +81,7 @@ class ControladorDocumento extends Controller
 		\Storage::disk('local')->put($nombre_archivo,  \File::get($archivo));
 
 		$result= $documento->save();
+
 		if($result){
 			return view("mensajeCorrecto")->with("msj","Publicación agregada correctamente");
 		}else{

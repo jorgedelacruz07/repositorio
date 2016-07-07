@@ -6,6 +6,11 @@
 		<form action="{{ url('perfil') }}" class="form-horizontal" method="post" autocomplete="off">
 			{{ csrf_field() }}
 			<div class="form-group">
+				<div class="col-md-9 col-md-offset-3" style="color: red">
+					<?php echo $msj; ?>
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="id_usuario" class="control-label col-md-3">ID</label>
 				<div class="col-md-9">
 					<input type="text" class="form-control" name="id_usuario" id="id_usuario" placeholder="ID de usuario">

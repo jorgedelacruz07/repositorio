@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/repositorio.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
@@ -22,7 +23,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="{{ url('login') }}">FISIZILLA</a>
+							<a class="navbar-brand" href="{{ url('/') }}">FISIZILLA</a>
 						</div>
 
 						<div class="collapse navbar-collapse" id="navbar1">
@@ -35,11 +36,11 @@
 										<span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu">
-										<li><a href="{{ url('recientes') }}">Recientes</a></li>
+										<li><a href="{{ url ('/documentos') }}">Recientes</a></li>
 										<li class="divider"></li>
-										<li><a href="{{ url('recientes') }}">Evaluaciones</a></li>
-										<li><a href="{{ url('recientes') }}">Bibliografías</a></li>
-										<li><a href="{{ url('recientes') }}">Clases</a></li>
+										<li><a href="{{ url ('/documentos/tipo/1') }}">Evaluaciones</a></li>
+										<li><a href="{{ url ('/documentos/tipo/2') }}">Bibliografías</a></li>
+										<li><a href="{{ url ('/documentos/tipo/3') }}">Clases</a></li>
 									</ul>
 								</li>
 								<li><a href="{{ url('subir') }}">Subir</a></li>
@@ -98,7 +99,7 @@
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="{{ url('perfil') }}">Perfil</a></li>
 							<li><a href="{{ url('cursos') }}">Cursos</a></li>
-							<li><a href="{{ url('recientes') }}">Documentos</a></li> 
+							<li><a href="{{ url('documentos') }}">Documentos</a></li> 
 							<li><a href="{{ url('subir') }}">Subir</a></li> 
 						</ul>
 					</div>
@@ -108,12 +109,15 @@
 	</footer>
 
 	<!-- Dropdown -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="js/jQuery2015.js"></script>
+	<script src="js/bootstrap3.1.js"></script>
 
 	<!-- Básico -->
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/repositorio.js"></script>
+
+
+	
 </body>
 </html>
