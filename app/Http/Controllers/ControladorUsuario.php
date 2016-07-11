@@ -30,11 +30,11 @@ class ControladorUsuario extends Controller
 				->with("usuario",$usuario)
 				->with("ruta",$ruta);
 			}else{
-				return view('login')
+				return redirect('login')
 				->with("msj","Contraseña inválida");
 			}
 		}else{
-			return view('login')
+			return redirect('login')
 			->with("msj","Usuario inválido");
 		}
 	}
@@ -46,11 +46,22 @@ class ControladorUsuario extends Controller
 		$eap_alumnos = EapAlumno::all();
 		$plan_estudioss = PlanEstudios::all();
 		return view("cursos")
-		// ->with("plan_estudioss", $plan_estudioss)
+		->with("msj", "")
+		->with("areas", $areas)
 		->with("eap_alumnos",$eap_alumnos);
 	}
 
 	public function registrar(Request $request){
+		$usuario = new Usuario();
+		$usuario->id_usuario = ;
+		$usuario->nombre_usuario = ;
+		$usuario->apellidos_usuario = ;
+		$usuario->password = ;
+		$usuario->fecha_creacion = ;
+		$usuario->id_sexo = ;
 		
+		$usuario->save();
+		return view('login')
+		->with('$usuario');
 	}
 }

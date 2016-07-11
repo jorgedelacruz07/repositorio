@@ -23,6 +23,11 @@
 				</div>
 			</div>
 			<div class="form-group">
+				<div class="col-md-9 col-md-offset-3">
+					<h5>Si no tienes una cuenta, <a href="{{ url('registro') }}">regístrate aquí</a></h5>
+				</div>
+			</div>
+			<div class="form-group">
 				<div class="checkbox col-md-9 col-md-offset-3">
 					<label>
 						<input type="checkbox">Recuérdame

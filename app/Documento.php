@@ -26,6 +26,10 @@ class Documento extends Model
 		return $this->hasOne("App\Bibliografia", "id_documento", "id_documento");
 	}
 
+	public function cursoxprofesor(){
+		return $this->belongsTo("App\CursoPorProfesor", "id_cursoXprof", "id_cursoXprof");
+	}
+
 	public $timestamps = false;
 	
     protected $table = "documento";

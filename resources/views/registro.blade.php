@@ -5,6 +5,17 @@
 	<div class="container col-md-6 col-md-offset-3">
 		<form action="{{ url('login') }}" class="form-horizontal">
 			<div class="form-group">
+				<div class="col-md-9 col-md-offset-3">
+					<h5>Si ya tienes una cuenta, <a href="{{ url('login') }}">entra aquí</a></h5>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="nombre" class="control-label col-md-3">Código</label>
+				<div class="col-md-9">
+					<input type="text" class="form-control" id="nombre" placeholder="Ej. 13200049">
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="nombre" class="control-label col-md-3">Nombres</label>
 				<div class="col-md-9">
 					<input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Antonio">
@@ -14,12 +25,6 @@
 				<label for="apellidos" class="control-label col-md-3">Apellidos</label>
 				<div class="col-md-9">
 					<input type="text" class="form-control" id="apellidos" placeholder="Ej. Perez Durán">
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="usuario" class="control-label col-md-3">Nombre de usuario</label>
-				<div class="col-md-9">
-					<input type="text" class="form-control" id="usuario" placeholder="Ej. juanperezd10">
 				</div>
 			</div>
 			<div class="form-group">

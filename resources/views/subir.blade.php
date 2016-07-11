@@ -18,10 +18,11 @@
 				<div class="col-md-8">
 				<?php $var = 1; ?>
 					<?php foreach ($tipo_documentos as $tipo_documento): ?>
-						<label for="tipo_documento" class="radio-inline">
-							<input type="radio" id="tipo_documento" name="tipo_documento<?= $var ?>" class="option">
+						<label for="tipo_documento_<?= $var ?>" class="radio-inline">
+							<input type="radio" id="tipo_documento_<?= $var ?>" name="tipo_documento" class="option" required>
 							<?= $tipo_documento->nombre_tipo_doc; ?>
 						</label>
+						<?php $var++;  ?>
 					<?php endforeach ?>
 				</div>
 			</div>
@@ -30,10 +31,11 @@
 				<div class="col-md-8">
 				<?php $var = 1; ?>
 					<?php foreach ($extension_documentos as $extension_documento): ?>
-						<label for="extension_documento" class="radio-inline">
-							<input type="radio" id="extension_documento" name="extension_documento<?= $var ?>" class="option">
+						<label for="extension_documento_<?= $var ?>" class="radio-inline">
+							<input type="radio" id="extension_documento_<?= $var ?>" name="extension_documento" class="option" required>
 							<?= $extension_documento->nombre_extension_doc; ?>
 						</label>
+						<?php $var++;  ?>
 					<?php endforeach ?>
 				</div>
 			</div>

@@ -6,45 +6,55 @@
 		<h2>Búsqueda avanzada</h2>
 		<hr>
 		<div class="dropdown">
-			<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-default" data-target="#" href="/recientes">
-				Escuela Académica <span class="caret"></span>
-			</a>
+			<a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-default" data-target="#" href="#"> Buscar por <span class="caret"></span></a>
 			<ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-				<?php foreach ($eap_alumnos as $eap_alumno): ?>
-					<li class="dropdown-submenu">
-						<a tabindex="-1" href="#"><?= $eap_alumno->nombre_eap; ?></a>
-						<ul class="dropdown-menu">
-							<?php foreach ($eap_alumno->plan_estudios as $planes): ?>
-								<li class="dropdown-submenu">
-									<a href=""><?= $planes->anio_plan_estudios; ?></a>
-									<ul class="dropdown-menu">
-										<?php foreach ($planes->cursoxplan as $cursos): ?>
-											<li><a href=""><?= $cursos->curso->nombre_curso; ?></a></li>
-										<?php endforeach ?>
-									</ul>
-								</li>
-							<?php endforeach ?>
-						</ul>
-					</li>
-				<?php endforeach ?>
-				<li><a href="#">Some action</a></li>
-				<li><a href="#">Some other action</a></li>
+				<li class="dropdown-submenu">
+					<a tabindex="-1" href="">Escuela Académica</a>
+					<ul class="dropdown-menu">
+						<?php foreach ($eap_alumnos as $eap_alumno): ?>
+							<li class="dropdown-submenu">
+								<a tabindex="-1" href=""><?= $eap_alumno->nombre_eap; ?></a>
+								<ul class="dropdown-menu">
+									<?php foreach ($eap_alumno->plan_estudios as $planes): ?>
+										<li class="dropdown-submenu">
+											<a href=""><?= $planes->anio_plan_estudios; ?></a>
+											<ul class="dropdown-menu">
+												<?php foreach ($planes->cursoxplan as $cursos): ?>
+													<li><a href="{{ url ('/documentos/curso', $cursos->curso->id_curso) }}"><?= $cursos->curso->nombre_curso; ?></a></li>
+												<?php endforeach ?>
+											</ul>
+										</li>
+									<?php endforeach ?>
+								</ul>
+							</li>
+						<?php endforeach ?>
+					</ul>
+				</li>
 				<li class="divider"></li>
 				<li class="dropdown-submenu">
-					<a tabindex="-1" href="#">Hover me for more options</a>
+					<a tabindex="-1" href="">Área Académica</a>
 					<ul class="dropdown-menu">
-						<li><a tabindex="-1" href="#">Second level</a></li>
-						<li class="dropdown-submenu"><a href="#">Even More..</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">3rd level</a></li>
-								<li><a href="#">3rd level</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Second level</a></li>
-						<li><a href="#">Second level</a></li>
+						<?php foreach ($areas as $area): ?>
+							<li class="dropdown-submenu">
+								<a tabindex="-1" href=""><?= $area->nombre_area; ?></a>
+								<ul class="dropdown-menu">
+									<?php foreach ($area->curso as $cursos): ?>
+										<li><a href="{{ url ('/documentos/curso', $cursos->id_curso) }}"><?= $cursos->nombre_curso; ?></a></li>
+									<?php endforeach ?>
+								</ul>
+							</li>
+						<?php endforeach ?>
 					</ul>
 				</li>
 			</ul>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div class="form-group">
+			<div style="color: red">
+				<?php echo $msj; ?>
+			</div>
 		</div>
 	</div>
 

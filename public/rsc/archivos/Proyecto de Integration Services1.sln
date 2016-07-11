@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{D183A3D8-5FD8-494B-B014-37F57B35E655}") = "Proyecto de Integration Services1", "Proyecto de Integration Services1\Proyecto de Integration Services1.dtproj", "{7F4549A2-87E8-4171-9E35-DABB2A2DCBEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F4549A2-87E8-4171-9E35-DABB2A2DCBEB}.Development|Default.ActiveCfg = Development
+		{7F4549A2-87E8-4171-9E35-DABB2A2DCBEB}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

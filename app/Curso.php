@@ -14,6 +14,10 @@ class Curso extends Model
 		return $this->hasMany("App\CursoPorPlan", "id_curso", "id_curso");
 	}
 
+	public function cursoxprofesor(){
+		return $this->hasMany("App\CursoPorProfesor", "id_curso", "id_curso");
+	}
+
 	public $timestamps = false;
 	
     protected $table = "curso";

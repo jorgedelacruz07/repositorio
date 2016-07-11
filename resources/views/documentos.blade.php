@@ -26,11 +26,7 @@
 					</td>
 					<td>
 						<a class="btn btn-primary" href="<?= $ruta.$documento->direccion_archivo ?>" target="_blank">Ver</a>
-						<?php if ($num_documentos == 1): ?>
-							<a class="btn btn-primary" href="../descargar_archivo/<?= $documento->id_documento ?>">Descargar</a>
-						<?php else: ?>
-							<a class="btn btn-primary" href="descargar_archivo/<?= $documento->id_documento ?>">Descargar</a>
-						<?php endif ?>
+						<a class="btn btn-primary" href="{{ url ('descargar_archivo', $documento->id_documento) }}">Descargar</a>
 					</td>
 				</tr>
 				<?php endforeach ?>
