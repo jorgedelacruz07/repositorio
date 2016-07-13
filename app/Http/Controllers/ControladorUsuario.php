@@ -53,12 +53,12 @@ class ControladorUsuario extends Controller
 
 	public function registrar(Request $request){
 		$usuario = new Usuario();
-		$usuario->id_usuario = ;
-		$usuario->nombre_usuario = ;
-		$usuario->apellidos_usuario = ;
-		$usuario->password = ;
-		$usuario->fecha_creacion = ;
-		$usuario->id_sexo = ;
+		$usuario->id_usuario = 0;
+		$usuario->nombre_usuario = 0;
+		$usuario->apellidos_usuario = 0;
+		$usuario->password = 0;
+		$usuario->fecha_creacion = 0;
+		$usuario->id_sexo = 0;
 		
 		$usuario->save();
 		return view('login')
