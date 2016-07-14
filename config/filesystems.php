@@ -45,7 +45,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('archivos'),
+            'root' => public_path('rsc/archivos'),
         ],
 
         'public' => [

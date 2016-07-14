@@ -3,40 +3,39 @@
 @section ('content')
 
 	<div class="container col-md-6 col-md-offset-3">
+		<div class="title">
+			<h2 class="text-primary">REGISTRO</h2>
+		</div>
+		<hr>
+		<br>
 		<form action="{{ url('login') }}" class="form-horizontal">
 			<div class="form-group">
 				<div class="col-md-9 col-md-offset-3">
-					<h5>Si ya tienes una cuenta, <a href="{{ url('login') }}">entra aquí</a></h5>
+					<h5>Si ya tiene una cuenta, <a href="{{ url('login') }}">entrar aquí</a></h5>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="nombre" class="control-label col-md-3">Código</label>
+				<label for="id_usuario" class="control-label col-md-3">Código</label>
 				<div class="col-md-9">
-					<input type="text" class="form-control" id="nombre" placeholder="Ej. 13200049">
+					<input type="text" class="form-control" name="id_usuario" id="id_usuario" placeholder="Ej. 13200049" required>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="nombre" class="control-label col-md-3">Nombres</label>
+				<label for="nombre_usuario" class="control-label col-md-3">Nombres</label>
 				<div class="col-md-9">
-					<input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Antonio">
+					<input type="text" class="form-control" name="nombre_usuario" id="nombre_usuario" placeholder="Ej. Juan Antonio" required>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="apellidos" class="control-label col-md-3">Apellidos</label>
+				<label for="apellidos_usuario" class="control-label col-md-3">Apellidos</label>
 				<div class="col-md-9">
-					<input type="text" class="form-control" id="apellidos" placeholder="Ej. Perez Durán">
+					<input type="text" class="form-control" name="apellidos_usuario" id="apellidos_usuario" placeholder="Ej. Perez Durán" required>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="contraseña" class="control-label col-md-3">Contraseña</label>
+				<label for="password" class="control-label col-md-3">Contraseña</label>
 				<div class="col-md-9">
-					<input type="password" class="form-control" id="contraseña">
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="contraseña2" class="control-label col-md-3">Repetir contraseña</label>
-				<div class="col-md-9">
-					<input type="password" class="form-control" id="contraseña2">
+					<input type="password" class="form-control" name="password" id="password" required>
 				</div>
 			</div>
 			<div class="form-group">
@@ -50,19 +49,59 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="col-md-9 col-md-offset-3">
-					<label for="administradaor" class="radio-inline">
-						<input type="radio" name="id_tipo_usuario" id="administradaor">Administrador
-					</label>
-					<label for="alumno" class="radio-inline">
-						<input type="radio" name="id_tipo_usuario" id="alumno">Alumno
-					</label>
+				<label for="option" class="control-label col-md-3">Escuela Académica</label>
+				<div class="col-md-9">
+					<select name="" id="option" class="form-control" required>
+						<option selected disabled>Elija una opción</option>
+						<?php foreach ($eap_alumnos as $eap_alumno): ?>
+							<option value="<?= $eap_alumno->id_eap ?>" id=""><?= $eap_alumno->nombre_eap ?></option>
+						<?php endforeach ?>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="telef_contacto" class="control-label col-md-3">Teléfono</label>
+				<div class="col-md-9">
+					<input type="number" class="form-control" name="telef_contacto" id="telef_contacto" placeholder="Ej. 993914123">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="email" class="control-label col-md-3">E-mail</label>
+				<div class="col-md-9">
+					<input type="mail" class="form-control" name="email" id="email" placeholder="example@gmail.com" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="dir_fotografia" class="control-label col-md-3">Archivo</label>
+				<div class="col-md-9">
+					<input type="file" id="dir_fotografia" name="dir_fotografia" class="file">
+					<p class="help-block">Maximo 10MB</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-md-3">Departamento</label>
+				<div class="col-md-9">
+					<select name="" id="" class="form-control category-1">
+						<option selected disabled>Departamento</option>
+						<?php foreach ($departamentos as $departamento): ?>
+							<option value="<?= $departamento->ubigeo_departamento ?>"><?= $departamento->nombre_departamento ?></option>
+						<?php endforeach ?>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="" class="control-label col-md-3">Provincia</label>
+				<div class="col-md-9">
+					<select name="" id="" class="form-control category-1">
+						<option selected disabled>Provincia</option>
+						<option value=""></option>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="checkbox col-md-9 col-md-offset-3">
 					<label>
-						<input type="checkbox">Acepto términos y restricciones
+						<input type="checkbox" required>Acepto términos y restricciones
 					</label>
 				</div>
 			</div>

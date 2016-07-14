@@ -56,18 +56,18 @@ class ControladorDocumento extends Controller
 				->with("documentos",$documentos)
 				->with("ruta",$ruta);
 			}else{
-				return redirect('cursos')
+				return view('cursos')
 				->with("msj","No se encontraron documentos")
 				->with("areas", $areas)
 				->with("eap_alumnos",$eap_alumnos);
 			}
 		}else{
-			return redirect('cursos')
+			return view('cursos')
 			->with("msj", "No existe")
 			->with("areas", $areas)
 			->with("eap_alumnos",$eap_alumnos);
 		}
-		return redirect('cursos')
+		return view('cursos')
 		->with('msj', 'Estamos teniendo inconvenientes')
 		->with("areas", $areas)
 		->with('eap_alumnos',$eap_alumnos);

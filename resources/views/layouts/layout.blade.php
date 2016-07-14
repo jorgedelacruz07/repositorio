@@ -30,7 +30,7 @@
 						<div class="collapse navbar-collapse" id="navbar1">
 							<ul class="nav navbar-nav">
 								<li><a href="{{ url('perfil') }}">Perfil</a></li>
-								<li><a href="{{ url('cursos') }}">Cursos</a></li>
+								<li><a href="{{ url('busqueda') }}">Búsqueda</a></li>
 								<li class="dropdown">
 									<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">
 										Documentos
@@ -78,7 +78,7 @@
 	<article class="contenido">
 		<br><br>
 		<br><br>
-		<br><br>
+		<br>
 		@yield('content')
 		<br><br>
 		<br><br>
@@ -88,8 +88,12 @@
 	<aside>
 	
 	</aside>
+
+	<footer style="height: 700px;">
+		
+	</footer>
 	
-	<footer>
+	<!-- <footer>
 		<nav class="navbar navbar-default navbar-fixed-bottom">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -98,7 +102,7 @@
 				<div class="collapse navbar-collapse">
 					<div class="nav navbar-nav navbar-right">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="{{ url('perfil') }}">Perfil</a></li>
+							<li><a href="{{ url('perfil') }}">Perfil</a></li>
 							<li><a href="{{ url('cursos') }}">Cursos</a></li>
 							<li><a href="{{ url('documentos') }}">Documentos</a></li> 
 							<li><a href="{{ url('subir') }}">Subir</a></li> 
@@ -107,7 +111,7 @@
 				</div>
 			</div>
 		</nav>
-	</footer>
+	</footer> -->
 
 	<!-- Dropdown -->
 	<script src="js/jQuery2015.js"></script>

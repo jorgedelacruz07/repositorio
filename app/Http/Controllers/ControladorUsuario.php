@@ -7,6 +7,7 @@ use App\Curso;
 use App\EapAlumno;
 use App\Area;
 use App\PlanEstudios;
+use App\Departamento;
 
 use Illuminate\Http\Request;
 
@@ -14,15 +15,15 @@ use App\Http\Requests;
 
 class ControladorUsuario extends Controller
 {
-	public function index(){
+	public function getlogin(){
 		return view("login")
 		->with("msj","");
 	}
 
-	public function login(Request $request){
+	public function postlogin(Request $request){
 		$id_usuario = $request->id_usuario;
 		$password = $request->password;
-		$ruta = "../storage/fotos/";
+		$ruta = "../public/rsc/fotos/";
 		$usuario = Usuario::where('id_usuario','=',$id_usuario)->first();
 		if($usuario){
 			if($usuario->password == $password){
@@ -30,38 +31,56 @@ class ControladorUsuario extends Controller
 				->with("usuario",$usuario)
 				->with("ruta",$ruta);
 			}else{
-				return redirect('login')
+				return view('login')
 				->with("msj","Contraseña inválida");
 			}
 		}else{
-			return redirect('login')
+			return view('login')
 			->with("msj","Usuario inválido");
 		}
 	}
 
-	public function cursos(){
+	public function getregistro(){
+		$eap_alumnos = EapAlumno::all();
+		$departamentos = Departamento::all();
+		return view('registro')
+		->with('eap_alumnos',$eap_alumnos)
+		->with('departamentos',$departamentos);
+	}
+	
+	public function postregistro(Request $request){
+		$usuario = new Usuario();
+		$alumno = new Alumno();
+		$data = $request;
+
+		$usuario->id_usuario = $data['id_usuario'];
+		$usuario->nombre_usuario = $data['nombre_usuario'];
+		$usuario->apellidos_usuario = $data['apellidos_usuario'];
+		$usuario->password = bcrypt($data['password']);
+		$usuario->fecha_creacion = date('y/m/d/h/i/s');
+		$usuario->id_sexo = $data['id_sexo'];
+		$usuario->id_estado_usuario = 'A';
+		$usuario->id_tipo_usuario = 'A';
+
+		if($usuario->save()){
+			return view('login')
+			->with('$usuario');
+		}else{
+			return view("mensajeRechazo")->with("msj","Hubo un error al agregar usuario");
+		}
+	}
+	
+	public function busqueda(){
 		$usuarios = Usuario::all();
 		$cursos = Curso::all();
 		$areas = Area::all();
 		$eap_alumnos = EapAlumno::all();
 		$plan_estudioss = PlanEstudios::all();
-		return view("cursos")
+		return view("busqueda")
 		->with("msj", "")
 		->with("areas", $areas)
 		->with("eap_alumnos",$eap_alumnos);
 	}
 
-	public function registrar(Request $request){
-		$usuario = new Usuario();
-		$usuario->id_usuario = 0;
-		$usuario->nombre_usuario = 0;
-		$usuario->apellidos_usuario = 0;
-		$usuario->password = 0;
-		$usuario->fecha_creacion = 0;
-		$usuario->id_sexo = 0;
-		
-		$usuario->save();
-		return view('login')
-		->with('$usuario');
-	}
+
 }

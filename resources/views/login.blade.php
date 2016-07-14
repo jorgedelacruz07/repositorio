@@ -3,6 +3,11 @@
 @section ('content')
 
 	<div class="container col-md-6 col-md-offset-3">
+		<div class="title">
+			<h2 class="text-primary">LOGIN</h2>
+		</div>
+		<hr>
+		<br>
 		<form action="{{ url('perfil') }}" class="form-horizontal" method="post" autocomplete="off">
 			{{ csrf_field() }}
 			<div class="form-group">
@@ -24,7 +29,7 @@
 			</div>
 			<div class="form-group">
 				<div class="col-md-9 col-md-offset-3">
-					<h5>Si no tienes una cuenta, <a href="{{ url('registro') }}">regístrate aquí</a></h5>
+					<h5>Si no tiene una cuenta, <a href="{{ url('registro') }}">regístrese aquí</a></h5>
 				</div>
 			</div>
 			<div class="form-group">

@@ -1,13 +1,17 @@
 @extends ('layouts.layout')
 
 @section ('content')
-
 	<div class="container col-md-6 col-md-offset-3">
+		<div class="title">
+			<h2 class="text-primary">SUBIR DOCUMENTO</h2>
+		</div>
+		<hr>
+		<br><br>
 		<form action="{{ url('subir') }}" class="form-horizontal" method="post" autocomplete="off" accept-charset="UTF-8" enctype="multipart/form-data">
 			{{ csrf_field() }}
 			<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 			<div class="form-group">
-				<label for="direccion_archivo" class="control-label col-md-4">Archivo:</label>
+				<label for="direccion_archivo" class="control-label col-md-4">Archivo</label>
 				<div class="col-md-8">
 					<input type="file" id="direccion_archivo" name="direccion_archivo" class="file" required>
 					<p class="help-block">Maximo 50MB</p>
