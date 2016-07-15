@@ -13,7 +13,7 @@
 			<div class="form-group">
 				<label for="direccion_archivo" class="control-label col-md-4">Archivo</label>
 				<div class="col-md-8">
-					<input type="file" id="direccion_archivo" name="direccion_archivo" class="file" required>
+					<input type="file" id="direccion_archivo" name="direccion_archivo" class="file" value="" required>
 					<p class="help-block">Maximo 50MB</p>
 				</div>
 			</div>
@@ -23,7 +23,7 @@
 				<?php $var = 1; ?>
 					<?php foreach ($tipo_documentos as $tipo_documento): ?>
 						<label for="tipo_documento_<?= $var ?>" class="radio-inline">
-							<input type="radio" id="tipo_documento_<?= $var ?>" name="tipo_documento" class="option" required>
+							<input type="radio" id="tipo_documento_<?= $var ?>" name="tipo_documento" class="option" value="" required>
 							<?= $tipo_documento->nombre_tipo_doc; ?>
 						</label>
 						<?php $var++;  ?>
@@ -36,7 +36,7 @@
 				<?php $var = 1; ?>
 					<?php foreach ($extension_documentos as $extension_documento): ?>
 						<label for="extension_documento_<?= $var ?>" class="radio-inline">
-							<input type="radio" id="extension_documento_<?= $var ?>" name="extension_documento" class="option" required>
+							<input type="radio" id="extension_documento_<?= $var ?>" name="extension_documento" class="option" value="" required>
 							<?= $extension_documento->nombre_extension_doc; ?>
 						</label>
 						<?php $var++;  ?>

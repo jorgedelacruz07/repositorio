@@ -8,6 +8,8 @@ use App\EapAlumno;
 use App\Area;
 use App\PlanEstudios;
 use App\Departamento;
+use App\Alumno;
+use App\Sexo;
 
 use Illuminate\Http\Request;
 
@@ -43,7 +45,9 @@ class ControladorUsuario extends Controller
 	public function getregistro(){
 		$eap_alumnos = EapAlumno::all();
 		$departamentos = Departamento::all();
+		$sexos = Sexo::all();
 		return view('registro')
+		->with('sexos',$sexos)
 		->with('eap_alumnos',$eap_alumnos)
 		->with('departamentos',$departamentos);
 	}
@@ -51,20 +55,35 @@ class ControladorUsuario extends Controller
 	public function postregistro(Request $request){
 		$usuario = new Usuario();
 		$alumno = new Alumno();
-		$data = $request;
 
-		$usuario->id_usuario = $data['id_usuario'];
-		$usuario->nombre_usuario = $data['nombre_usuario'];
-		$usuario->apellidos_usuario = $data['apellidos_usuario'];
-		$usuario->password = bcrypt($data['password']);
+		$usuario->id_usuario = $request->input('id_usuario');
+		$usuario->nombre_usuario = $request->input('nombre_usuario');
+		$usuario->apellidos_usuario = $request->input('apellidos_usuario');
+		$usuario->password = $request->input('password');
 		$usuario->fecha_creacion = date('y/m/d/h/i/s');
-		$usuario->id_sexo = $data['id_sexo'];
+		$usuario->id_sexo = $request->input('id_sexo');
 		$usuario->id_estado_usuario = 'A';
 		$usuario->id_tipo_usuario = 'A';
 
+		$alumno->id_usuario = $request->input('id_usuario');
+		$alumno->id_eap = '10.2';
+		$alumno->telef_contacto = '000000000';
+		$alumno->email = $request->input('email');
+		$alumno->dir_fotografia = $request->input('dir_fotografia');
+		$alumno->nivel = '1';
+		$alumno->puntos_alumno = '0';
+		$alumno->numero_faltas = '0';
+		$alumno->direccion_actual = 'Hola mundo	';
+		$alumno->ubigeo_distrito = '150103';
+		$alumno->save();
+
 		if($usuario->save()){
-			return view('login')
-			->with('$usuario');
+			if($alumno->save()){
+				return view('login')
+				->with('$usuario');
+			}else{
+				return view("mensajeRechazo")->with("msj","Hubo un error al agregar alumno");
+			}
 		}else{
 			return view("mensajeRechazo")->with("msj","Hubo un error al agregar usuario");
 		}
